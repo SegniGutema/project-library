@@ -49,20 +49,17 @@ function addBookToLibrary() {
     //render book to dom element
     let readStatusToggle = document.createElement("input:checkbox");
     for (let book of myLibrary) {
-      libEl.innerHTML = `<ul>
-        
-            <li>Title :  ${book.title}</li>
-            <li>Author : ${book.author}</li>
-            <li>Pages :  ${book.pages}</li>
-            <li class="readStat">Status : <button class="readStatBtn">${
-        book.readStatus ? "Read" : "Not Read"
-            }</li>
-            <button class="removeBtn">Delete</button>
-      </ul>`;
-      
+      libEl.innerHTML = `
+    <li>Title :  ${book.title}</li>
+    <li>Author : ${book.author}</li>
+    <li>Pages :  ${book.pages}</li>
+    <li class="readStat">Status : <button class="readStatBtn">${
+      book.readStatus ? "Read" : "Not Read"
+    }</li>
+    <button class="removeBtn">Delete</button>`;
+
       library.appendChild(libEl);
     }
-    document.querySelectorAll('ul').forEach(ul => ul.style.listStyle = 'none')
     //let add read status toggle
     let readStat = document.querySelector(".readStat");
 
@@ -129,8 +126,7 @@ function addBookToLibrary() {
     background-color:#9f9f9f;
     color:black;
     border-radius:7px;
-    padding:1.5rem 0.7rem;
-    
+    padding:1rem 0.7rem;
     `;
   });
 }
